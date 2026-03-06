@@ -324,7 +324,7 @@ fireauto를 만든 사람이 직접 가르치는 부트캠프예요.
 
 > S전자 강의 수강생 만족도 **4.8점** · 누적 수강생 **200명+** · **10명 한정** 소수 정예
 
-**[부트캠프 자세히 보기 →](https://fireship.me/ko/bootcamp)**
+**[부트캠프 자세히 보기 →](https://fireship.me/ko/bootcamp?utm_source=github&utm_medium=readme&utm_campaign=fireauto)**
 
 ---
 
@@ -346,17 +346,17 @@ fireauto를 만든 사람이 직접 가르치는 부트캠프예요.
 - **SDS** — 도메인 지식 기반 니치 B2B SaaS 기획~해외 런칭 ($8K MRR 달성)
 - **기업 맞춤 자동화** — 주간 보고서 자동 생성, 데이터 수집 파이프라인, 이메일 자동 분류
 
-**[기업 문의하기 →](https://fireship.me/ko/enterprise)**
+**[기업 문의하기 →](https://fireship.me/ko/enterprise?utm_source=github&utm_medium=readme&utm_campaign=fireauto)**
 
 ---
 
 ## About
 
-Made by [FreAiner](https://fireship.me)
+Made by [FreAiner](https://fireship.me?utm_source=github&utm_medium=readme&utm_campaign=fireauto)
 
 1년간 Claude Code로 AI 서비스 40개를 만들고, 그 중 3개를 수익화한 1인 개발자예요. S전자 등 기업 대상 AI 교육 15회 이상 진행했고, 그 과정에서 매일 반복하던 작업을 자동화한 도구들을 모아서 오픈소스로 공개합니다.
 
-- Web: [fireship.me](https://fireship.me)
+- Web: [fireship.me](https://fireship.me?utm_source=github&utm_medium=readme&utm_campaign=fireauto)
 - Threads: [@freainer](https://www.threads.net/@freainer)
 
 ## License
