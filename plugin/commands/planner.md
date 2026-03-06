@@ -1,5 +1,5 @@
 ---
-description: "아이디어를 상세한 PRD 문서로 변환"
+description: "아이디어 한 줄이면 충분해요. 상세한 기획서(PRD)를 만들어줘요."
 allowed-tools:
   - WebSearch
   - WebFetch

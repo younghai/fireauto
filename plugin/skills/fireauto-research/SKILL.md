@@ -1,10 +1,9 @@
 ---
 name: fireauto-research
 description: >
-  This skill should be used when the user asks to "레딧 리서치", "reddit research",
-  "수요조사", "시장조사", "리드 스코어링", "lead scoring", "market research",
-  "레딧에서 고객 찾기", "레딧 데이터 수집", "reddit lead generation", or
-  mentions Reddit-based market validation or customer discovery.
+  "레딧 리서치", "reddit research", "수요조사", "시장조사", "리드 스코어링",
+  "lead scoring", "market research", "레딧에서 고객 찾기", "레딧 데이터 수집",
+  "reddit lead generation" 등 레딧 기반 시장 조사나 고객 발굴 시 사용하세요.
 ---
 
 # Reddit 기반 시장 조사

@@ -1,10 +1,9 @@
 ---
 name: fireauto-mem
 description: >
-  This skill should be used when the user asks about "메모리 관리", "memory",
-  "기억", "컨텍스트 저장", "세션 간 기억", "히스토리", "작업 기록",
-  "claude-mem", "remember", "이전 작업 불러오기", or mentions
-  cross-session context management or work history tracking.
+  "메모리 관리", "memory", "기억", "컨텍스트 저장", "세션 간 기억",
+  "히스토리", "작업 기록", "claude-mem", "remember", "이전 작업 불러오기"
+  등 세션 간 컨텍스트 관리나 작업 기록 추적에 관한 질문일 때 사용하세요.
 ---
 
 # 메모리 관리 가이드 (claude-mem 연동)

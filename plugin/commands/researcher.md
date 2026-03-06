@@ -1,5 +1,5 @@
 ---
-description: "레딧 수요조사 + 리드스코어링 자동화"
+description: "레딧에서 내 고객을 찾아줘요. 수요조사부터 리드 점수까지."
 allowed-tools:
   - WebSearch
   - WebFetch

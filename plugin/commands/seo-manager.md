@@ -1,5 +1,5 @@
 ---
-description: "SEO 종합점검 - 기술 SEO, 구조화 데이터, pSEO 감사"
+description: "내 사이트가 검색에 잘 나오는지 자동으로 점검해줘요."
 allowed-tools:
   - Read
   - Glob

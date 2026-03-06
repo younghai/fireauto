@@ -1,11 +1,9 @@
 ---
 name: fireauto-prd
 description: >
-  This skill should be used when the user asks to "PRD 작성", "기획서",
-  "제품 기획", "product requirements", "아이디어 구체화", "서비스 기획",
-  "feasibility", "실현 가능성", "API 조사", "기술 스택 추천",
-  "경쟁사 분석", "수익 모델", or mentions turning an idea into
-  a structured product requirements document.
+  "PRD 작성", "기획서", "제품 기획", "product requirements", "아이디어 구체화",
+  "서비스 기획", "feasibility", "실현 가능성", "API 조사", "기술 스택 추천",
+  "경쟁사 분석", "수익 모델" 등 아이디어를 PRD 문서로 변환할 때 사용하세요.
 ---
 
 # PRD 작성 가이드

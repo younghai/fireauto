@@ -1,11 +1,10 @@
 ---
 name: fireauto-team
 description: >
-  This skill should be used when the user asks to "팀 에이전트", "team agent",
-  "병렬 작업", "parallel work", "워크스트림", "workstream", "여러 에이전트",
-  "동시에 작업", "에이전트 팀", "에이전트 간 대화", "team chat",
-  "컴퍼니", "company model", or mentions multi-agent parallel workflows
-  or agent coordination.
+  "팀 에이전트", "team agent", "병렬 작업", "parallel work", "워크스트림",
+  "workstream", "여러 에이전트", "동시에 작업", "에이전트 팀",
+  "에이전트 간 대화", "team chat", "컴퍼니", "company model" 등
+  멀티 에이전트 병렬 작업이나 에이전트 간 협업 시 사용하세요.
 ---
 
 # 컴퍼니 모델 팀 시스템

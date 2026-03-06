@@ -1,10 +1,10 @@
 ---
 name: fireauto-ui
 description: >
-  This skill should be used when the user asks to "DaisyUI", "daisyui",
-  "UI 마이그레이션", "UI migration", "shadcn to daisyui", "테마 설정",
-  "theme", "컴포넌트 변환", "DaisyUI 테마", "DaisyUI 컴포넌트", or
-  mentions DaisyUI-based UI building or shadcn/ui migration.
+  "DaisyUI", "daisyui", "UI 마이그레이션", "UI migration",
+  "shadcn to daisyui", "테마 설정", "theme", "컴포넌트 변환",
+  "DaisyUI 테마", "DaisyUI 컴포넌트" 등 DaisyUI 기반 UI 구축이나
+  shadcn/ui 마이그레이션 시 사용하세요.
 ---
 
 # DaisyUI v5 Best Practices

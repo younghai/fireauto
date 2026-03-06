@@ -1,5 +1,5 @@
 ---
-description: "보안 종합점검 - API, 인증, 입력값, 의존성 취약점 감사"
+description: "내 코드에 보안 구멍이 없는지 자동으로 점검해줘요."
 allowed-tools:
   - Read
   - Glob

@@ -1,5 +1,5 @@
 ---
-description: "팀 에이전트 상태 및 태스크 진행 확인"
+description: "지금 AI 팀이 뭐 하고 있는지 한눈에 확인해요."
 allowed-tools:
   - TaskList
   - TaskGet

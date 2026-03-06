@@ -1,5 +1,5 @@
 ---
-description: "DaisyUI 기반 UI 구축 및 마이그레이션"
+description: "DaisyUI로 예쁜 UI를 만들거나, 기존 UI를 바꿔줘요."
 allowed-tools:
   - Read
   - Edit

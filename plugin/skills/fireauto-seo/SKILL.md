@@ -1,10 +1,10 @@
 ---
 name: fireauto-seo
 description: >
-  This skill should be used when the user asks to "SEO 감사", "SEO audit",
-  "기술 SEO", "technical SEO", "구조화 데이터", "schema markup", "JSON-LD",
-  "robots.txt", "sitemap", "메타 태그", "검색엔진 최적화", "pSEO",
-  "Rich Results", "Core Web Vitals", or mentions SEO-related optimization.
+  "SEO 감사", "SEO audit", "기술 SEO", "technical SEO", "구조화 데이터",
+  "schema markup", "JSON-LD", "robots.txt", "sitemap", "메타 태그",
+  "검색엔진 최적화", "pSEO", "Rich Results", "Core Web Vitals" 등
+  SEO 관련 최적화나 감사 시 사용하세요.
 ---
 
 # SEO 감사 방법론

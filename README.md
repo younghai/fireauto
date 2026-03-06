@@ -11,7 +11,7 @@
 </p>
 
 <p align="center">
-  <a href="#설치하기">설치하기</a> · <a href="#어떤-기능이-있나요">기능</a> · <a href="#하나씩-알아볼게요">사용법</a> · <a href="#자주-묻는-질문">FAQ</a>
+  <a href="#시작하기">시작하기</a> · <a href="#어떤-상황에서-뭘-쓰면-되나요">기능 가이드</a> · <a href="#각-기능-상세">상세 설명</a> · <a href="#자주-묻는-질문">FAQ</a>
 </p>
 
 <p align="center">
@@ -21,7 +21,7 @@
 </p>
 
 <p align="center">
-  도움이 됐다면 ⭐ Star를 눌러주세요. 업데이트 소식을 받아볼 수 있어요.
+  도움이 됐다면 Star를 눌러주세요. 업데이트 소식을 받아볼 수 있어요.
 </p>
 
 ---
@@ -32,366 +32,225 @@
 
 1년 동안 Claude Code로 AI 서비스 40개를 만들었어요. 매번 SEO 점검하고, 보안 체크하고, 레딧에서 고객 찾고, PRD 쓰고... 같은 작업을 반복하더라고요. 그래서 그 과정에서 쌓인 노하우와 패턴을 전부 플러그인으로 만들었어요.
 
-터미널에서 `/fireauto-seo`라고 입력하면 AI가 알아서 SEO를 점검하고,
-`/fireauto-secure`라고 입력하면 보안 취약점을 찾아줘요.
+터미널에서 `/seo-manager`라고 입력하면 AI가 알아서 SEO를 점검하고,
+`/security-guard`라고 입력하면 보안 취약점을 찾아줘요.
 
 사람이 하면 반나절 걸리는 일을, 커맨드 하나로 끝낼 수 있어요.
 
-> Claude Code가 처음이라면 [아래 설명](#claude-code가-뭔가요)부터 읽어주세요.
+---
 
-## 어떤 기능이 있나요?
+## 시작하기
 
-| 커맨드 | 한 줄 설명 |
-|--------|-----------|
-| `/fireauto-prd` | 아이디어 한 줄로 PRD 문서 만들기 |
-| `/fireauto-research` | 레딧에서 내 고객 찾기 |
-| `/fireauto-team` | 여러 AI가 동시에 일하고, 서로 대화하며 협업하기 |
-| `/fireauto-team-status` | 지금 AI가 뭐 하고 있는지 확인하기 |
-| `/fireauto-seo` | 내 사이트 SEO 자동 점검 |
-| `/fireauto-secure` | 내 코드 보안 취약점 자동 점검 |
-| `/fireauto-ui` | DaisyUI로 예쁜 UI 만들기 |
-
-## 보일러플레이트와 함께 쓰기
-
-fireauto는 단독으로도 쓸 수 있지만, **[FireShip Starter Kit](https://github.com/imgompanda/FireShipZip3)**과 함께 쓰면 더 강력해요.
-
-보일러플레이트에 인증, 결제, AI, 이메일이 다 들어있고, fireauto로 SEO 점검하고 보안 체크하고 UI 만들면 바로 런칭할 수 있어요.
-
-[데모 보기 →](https://fire-ship-zip3.vercel.app)
+### 1단계: fireauto 설치
 
 ```bash
-# 보일러플레이트 다운로드
-git clone https://github.com/imgompanda/FireShipZip3.git
-cd FireShipZip3
-
-# Claude Code에서 fireauto 설치
-claude
+# Claude Code 안에서 실행
 /plugin marketplace add imgompanda/fireauto
 /plugin install fireauto@fireauto
-
-# 이제 /fireauto-seo, /fireauto-secure 등을 바로 쓸 수 있어요
 ```
 
-[보일러플레이트 자세히 보기 →](https://github.com/imgompanda/FireShipZip3)
+설치 끝. 이제 `/seo-manager` 같은 커맨드를 바로 쓸 수 있어요.
+
+> GitHub에서 안 되면: `git clone https://github.com/imgompanda/fireauto.git` → `/plugin marketplace add ./fireauto` → `/plugin install fireauto@fireauto`
+
+### 2단계: 보일러플레이트가 필요한가요?
+
+이미 프로젝트가 있다면 **건너뛰세요**. fireauto는 어떤 프로젝트에서든 바로 쓸 수 있어요.
+
+새 프로젝트를 시작하려면 **[FireShip Starter Kit](https://github.com/imgompanda/FireShipZip3)**을 추천해요.
+인증, 결제, AI, 이메일, 다국어가 다 들어있어요.
+
+```bash
+# 커맨드 하나로 자동 설치 (클론 + 의존성 + 환경변수 설정)
+/fireship-install
+```
+
+또는 수동으로:
+
+```bash
+git clone https://github.com/imgompanda/FireShipZip3.git my-app
+cd my-app && npm install && cp .env.example .env.local
+```
+
+[데모 보기](https://fire-ship-zip3.vercel.app) · [보일러플레이트 자세히 보기](https://github.com/imgompanda/FireShipZip3)
 
 ---
 
-## 먼저 준비할 것
+## 어떤 상황에서 뭘 쓰면 되나요?
 
-### 1. Claude Code 설치
+### 서비스를 처음 만드는 중이라면
 
-fireauto는 Claude Code 안에서 돌아가요. 먼저 Claude Code를 설치해주세요.
+```
+1. /planner     → 아이디어를 기획서로 만들어요
+2. /researcher  → 레딧에서 진짜 고객이 있는지 확인해요
+3. /designer    → DaisyUI로 UI를 만들어요
+```
+
+### 서비스를 거의 다 만들었다면
+
+```
+4. /seo-manager     → SEO가 제대로 되어있는지 점검해요
+5. /security-guard  → 보안 구멍이 없는지 확인해요
+```
+
+### 규모가 큰 작업이라면
+
+```
+6. /ceo   → 여러 AI가 동시에 작업하고 서로 대화해요
+```
+
+### 프롬프트를 잘 못 쓰겠다면
+
+```
+7. /loop  → 프롬프트 하나만 던지면 AI가 알아서 반복하며 완성해요
+```
+
+---
+
+## 전체 커맨드
+
+| 커맨드 | 역할 | 한 줄 설명 |
+|--------|------|-----------|
+| `/planner` | 기획자 | 아이디어 한 줄 → 상세 PRD 문서 |
+| `/researcher` | 리서처 | 레딧에서 고객 찾기 + 리드 스코어링 |
+| `/ceo` | CEO | AI 팀 구성 + 병렬 작업 + 에이전트 간 대화 |
+| `/ceo-status` | CEO 비서 | AI 팀 진행 상황 확인 |
+| `/seo-manager` | SEO 관리자 | SEO 7개 영역 자동 점검 |
+| `/security-guard` | 보안 담당 | 코드 보안 취약점 8개 카테고리 점검 |
+| `/designer` | 디자이너 | DaisyUI UI 구축 / 마이그레이션 / 테마 |
+| `/loop` | 반복 실행기 | AI가 반복하며 작업 완성 (ralph-loop 기반) |
+| `/cancel-loop` | | 실행 중인 루프 중단 |
+| `/fireship-install` | | FireShip 보일러플레이트 자동 설치 |
+
+---
+
+## 각 기능 상세
+
+### `/planner` — 기획자
+
+"이런 서비스 만들고 싶은데..." 한 줄만 적으면 상세한 기획서가 나와요.
+
+```
+/planner
+```
+
+9개 섹션을 자동으로 만들어요:
+프로젝트 개요, 핵심 기능(P0/P1/P2), 실현 가능성 조사, 외부 API 가격 비교, 경쟁사 분석, 기술 스택 추천, 수익 모델, 구현 로드맵, 성공 지표
+
+`docs/prd/` 폴더에 마크다운으로 저장돼요.
+
+### `/researcher` — 리서처
+
+레딧에서 관련 게시글을 찾아서, 누가 진짜 고객인지 1~10점으로 점수를 매겨줘요.
+
+```
+/researcher
+```
+
+결과물:
+- **리드 점수표** (CSV) — hot/warm/cold/not_a_lead 4단계 분류
+- **고충 분류** — 비용, 시간, 복잡성, 규제, 스케일 카테고리별 정리
+- **요약 리포트** — 마크다운 문서
+
+### `/ceo` — CEO (컴퍼니 모델)
+
+여러 AI가 동시에 작업하고, 서로 대화하며 협업해요.
+
+```
+/ceo
+```
+
+- AI끼리 SendMessage로 실시간 논의
+- 각자 독립된 공간(git worktree)에서 작업 → 코드 충돌 없음
+- 작업 완료 후 자동으로 순차 병합
+
+팀 상태 확인: `/ceo-status`
+
+### `/seo-manager` — SEO 관리자
+
+코드 기반으로 SEO 7개 영역을 점검해요. 빌드하지 않아도 돼요.
+
+```
+/seo-manager
+```
+
+점검 항목: robots.txt, sitemap, JSON-LD 구조화 데이터, 메타 태그, pSEO 라우트, 리다이렉트 체인, 성능 SEO
+
+결과는 P0(긴급) ~ P3(개선 권장)으로 정리돼요.
+
+### `/security-guard` — 보안 담당
+
+코드에 보안 구멍이 없는지 8개 카테고리로 점검해요.
+
+```
+/security-guard
+```
+
+점검 항목: 시크릿 노출, 인증/인가 누락, Rate Limiting, 파일 업로드, 스토리지 보안, Prompt Injection, 정보 노출, 의존성 취약점
+
+CRITICAL → HIGH → MEDIUM → LOW 순으로 보여주고, 수정 방법도 알려줘요.
+
+### `/designer` — 디자이너
+
+DaisyUI v5 기반으로 UI를 만들거나 바꿔줘요.
+
+```
+/designer
+```
+
+3가지 모드:
+- **build** — 처음부터 DaisyUI로 UI 만들기
+- **migrate** — shadcn/ui → DaisyUI 자동 변환
+- **theme** — oklch() 컬러로 테마 설정
+
+### `/loop` — 반복 실행기
+
+프롬프트 하나 던지면, AI가 반복하면서 스스로 작업을 완성해요.
+
+```
+/loop TODO API 만들어줘 --completion-promise '모든 테스트 통과' --max-iterations 20
+```
+
+동작 방식:
+1. AI가 작업 → 2. 나가려 하면 같은 프롬프트 재투입 → 3. 이전 작업 결과 보면서 개선 → 4. 완료 조건 달성 시 종료
+
+초보자에게 특히 좋아요. 프롬프트를 잘 못 써도 반복하면서 알아서 완성해줘요.
+
+중단: `/cancel-loop`
+
+---
+
+## 플러그인 관리
 
 ```bash
-npm install -g @anthropic-ai/claude-code
+/plugin update fireauto      # 업데이트
+/plugin disable fireauto     # 잠깐 끄기
+/plugin enable fireauto      # 다시 켜기
+/plugin uninstall fireauto   # 삭제
 ```
 
-설치가 됐는지 확인해볼게요.
-
+팀 전체가 쓰려면:
 ```bash
-claude --version
-```
-
-버전 번호가 나오면 성공이에요.
-
-> Claude Code는 Anthropic이 만든 공식 AI 코딩 도구예요.
-> 터미널에서 AI랑 대화하면서 코드를 읽고, 수정하고, 실행할 수 있어요.
-> 더 자세한 설명: https://docs.anthropic.com/en/docs/claude-code
-
-### 2. Anthropic 계정
-
-Claude Code를 쓰려면 다음 중 하나가 필요해요.
-- **Claude Max/Pro 구독** (가장 편해요)
-- **Anthropic API 크레딧**
-
-## 설치하기
-
-### GitHub에서 설치하기 (추천)
-
-```bash
-# 1. 터미널에서 Claude Code를 실행해요
-claude
-
-# 2. 아래 명령어를 그대로 입력해요
-/plugin marketplace add imgompanda/fireauto
-
-# 3. 플러그인을 설치해요
-/plugin install fireauto@fireauto
-```
-
-끝이에요. 이제 `/fireauto-seo` 같은 커맨드를 바로 쓸 수 있어요.
-
-### 직접 다운로드해서 설치하기
-
-GitHub에서 설치가 안 되면 이 방법을 써보세요.
-
-```bash
-# 1. 저장소를 다운로드해요
-git clone https://github.com/imgompanda/fireauto.git
-
-# 2. Claude Code를 실행해요
-claude
-
-# 3. 다운받은 폴더를 마켓플레이스로 등록해요
-/plugin marketplace add ./fireauto
-
-# 4. 플러그인을 설치해요
-/plugin install fireauto@fireauto
-```
-
-### 설치됐는지 확인하기
-
-Claude Code 안에서 이렇게 입력해보세요.
-
-```
-/plugin
-```
-
-플러그인 목록에 fireauto가 보이면 성공이에요.
-
-### 팀이랑 같이 쓰고 싶다면
-
-```bash
-# 나만 쓸래요 (기본값)
-/plugin install fireauto@fireauto
-
-# 팀 전체가 쓸 수 있게 (프로젝트 git에 포함돼요)
 /plugin install fireauto@fireauto --scope project
 ```
 
-## 하나씩 알아볼게요
-
-### `/fireauto-prd` — 아이디어 한 줄로 PRD 만들기
-
-"이런 서비스 만들고 싶은데..." 한 줄만 적으면, 상세한 기획서가 나와요.
-
-```
-/fireauto-prd
-```
-
-이렇게 물어볼 거예요:
-- **어떤 서비스를 만들고 싶으세요?** (한 줄이면 충분해요)
-- 타겟 사용자는요? (안 적어도 돼요)
-- 비슷한 서비스 알고 있나요? (안 적어도 돼요)
-
-예를 들어 "화학물질 SDS 자동 생성 서비스"라고만 적으면, 이런 걸 만들어줘요:
-
-- **프로젝트 개요** — 서비스명, 해결하는 문제, 타겟 사용자
-- **핵심 기능** — MVP 필수 기능(P0), 있으면 좋은 기능(P1), 확장 기능(P2)
-- **실현 가능성 조사** — 기술적 난이도, 위험 요소, 대안 접근법
-- **필요한 API/서비스** — 실제로 쓸 수 있는 API를 찾아서 가격, 제한사항까지 정리
-- **경쟁사 분석** — 비슷한 서비스 찾아서 가격, 기능, 차별점 비교
-- **기술 스택 제안** — 프론트/백/DB/인프라 추천 + 예상 월 비용
-- **수익 모델** — 가격 전략, 시장 규모 추정
-- **구현 로드맵** — Phase 1(MVP) → Phase 2(성장) → Phase 3(확장)
-
-`docs/prd/` 폴더에 마크다운 문서로 저장돼요.
-
-### `/fireauto-research` — 레딧에서 내 고객 찾기
-
-새로운 서비스를 만들기 전에, 진짜 이걸 원하는 사람이 있는지 확인하고 싶잖아요.
-
-레딧에서 관련 게시글을 찾아서, 누가 진짜 고객인지 점수를 매겨줘요.
-
-```
-/fireauto-research
-```
-
-이렇게 물어볼 거예요:
-- **키워드**: 뭘 찾을까요? (예: "SDS authoring", "화장품 성분 분석")
-- **서브레딧**: 어디서 찾을까요? (기본값이 있어서 그냥 엔터 쳐도 돼요)
-- **고객 정의**: 어떤 사람을 찾고 있나요? (예: "화학물질 규제가 힘든 소규모 제조사")
-
-결과로 이런 걸 받아요:
-- **리드 점수표** (CSV) — 누가 가장 유망한 고객인지 1~10점으로 스코어링
-- **고충 분류** — 비용 문제? 시간 문제? 규제 문제? 카테고리별로 정리
-- **요약 리포트** — 한눈에 볼 수 있는 마크다운 문서
-
-### `/fireauto-team` — 여러 AI가 동시에 일하게 하기
-
-혼자서 할 수 있지만, 여러 AI가 나눠서 하면 훨씬 빨라요.
-
-```
-/fireauto-team
-```
-
-예를 들어 "랜딩페이지 전체를 리뉴얼해줘"라고 하면:
-- **AI 1번**: 헤더랑 푸터 담당
-- **AI 2번**: 히어로 섹션이랑 가격 섹션 담당
-- **AI 3번**: 반응형 + 접근성 담당
-
-각자 맡은 부분을 동시에 작업하고, 끝나면 자동으로 합쳐줘요.
-
-**컴퍼니 모델** — AI끼리 대화도 해요.
-
-```
-[프론트엔드 → 백엔드] "UserProfile에 avatarUrl 추가해줄 수 있어?"
-[백엔드 → 프론트엔드] "추가했어. null일 수 있으니 fallback 처리 부탁해."
-[프론트엔드 → CEO] "pagination 방식 결정해주세요."
-[CEO → 전체] "offset 방식으로 가겠습니다."
-```
-
-CEO(나)는 방향만 잡으면, 팀원 AI들이 SendMessage로 알아서 논의해요.
-각자 독립된 공간(git worktree)에서 작업하니까 코드 충돌도 없어요.
-
-### `/fireauto-seo` — 내 사이트 SEO 자동 점검
-
-검색엔진에 잘 노출되고 있는지, 7개 영역을 자동으로 점검해요.
-
-```
-/fireauto-seo
-```
-
-점검하는 것들:
-- robots.txt, sitemap.xml이 제대로 되어 있는지
-- JSON-LD 구조화 데이터가 올바른지
-- 메타 태그 (title, description, OG 이미지)
-- 페이지 중복이나 빈 콘텐츠는 없는지
-- 리다이렉트가 꼬여 있지 않은지
-- 로딩 속도에 영향주는 요소
-
-결과는 심각도별로 정리돼요: P0(지금 당장 고쳐야 함) ~ P3(나중에 해도 됨)
-
-### `/fireauto-secure` — 내 코드 보안 점검
-
-"혹시 내 코드에 보안 구멍이 있진 않을까?" 싶을 때 써보세요.
-
-```
-/fireauto-secure
-```
-
-이런 걸 찾아줘요:
-- **.env 파일**이 코드에 들어가 있진 않은지
-- **인증 없는 API**가 열려 있지 않은지
-- AI 엔드포인트에 **rate limit**이 걸려 있는지
-- 파일 업로드할 때 **위험한 파일**을 막고 있는지
-- 사용자 입력이 AI 프롬프트에 **그대로 들어가진** 않는지
-- npm 패키지에 **알려진 취약점**이 있는지
-
-CRITICAL/HIGH/MEDIUM/LOW로 나눠서 보여주고, 어떻게 고치면 되는지도 알려줘요.
-
-### `/fireauto-ui` — DaisyUI로 예쁜 UI 만들기
-
-DaisyUI v5 컴포넌트를 최대한 활용해서 UI를 만들어줘요.
-
-```
-/fireauto-ui
-```
-
-3가지 모드가 있어요:
-- **build** — 처음부터 DaisyUI로 UI 만들기
-- **migrate** — 기존 shadcn/ui를 DaisyUI로 바꾸기
-- **theme** — DaisyUI 테마 색상 설정하기
-
-## 플러그인 관리하기
-
-```bash
-# 최신 버전으로 업데이트
-/plugin update fireauto
-
-# 잠깐 끄기
-/plugin disable fireauto
-
-# 다시 켜기
-/plugin enable fireauto
-
-# 완전히 삭제
-/plugin uninstall fireauto
-```
-
-## 폴더 구조
-
-```
-fireauto/
-├── .claude-plugin/
-│   └── plugin.json          # 플러그인 설정 파일
-├── commands/                # 슬래시 커맨드 (7개)
-│   ├── fireauto-prd.md
-│   ├── fireauto-research.md
-│   ├── fireauto-team.md
-│   ├── fireauto-team-status.md
-│   ├── fireauto-seo.md
-│   ├── fireauto-secure.md
-│   └── fireauto-ui.md
-├── agents/                  # AI 에이전트 (6개)
-│   ├── prd-researcher.md
-│   ├── research-analyzer.md
-│   ├── team-coordinator.md
-│   ├── seo-auditor.md
-│   ├── security-auditor.md
-│   └── ui-builder.md
-├── skills/                  # 자동 트리거 스킬 (7개)
-│   ├── fireauto-prd/SKILL.md
-│   ├── fireauto-research/SKILL.md + references/
-│   ├── fireauto-team/SKILL.md
-│   ├── fireauto-seo/SKILL.md + references/
-│   ├── fireauto-secure/SKILL.md + references/
-│   ├── fireauto-ui/SKILL.md + references/
-│   └── fireauto-mem/SKILL.md
-├── fireauto.png
-└── README.md
-```
-
-### Commands, Skills, Agents가 뭐가 다른 건가요?
-
-| 종류 | 설명 |
-|------|------|
-| **Commands** | `/fireauto-seo`처럼 직접 입력해서 실행하는 거예요 |
-| **Skills** | "SEO 점검해줘"처럼 말하면 알아서 켜지는 거예요 |
-| **Agents** | 실제로 분석하고 작업하는 AI 일꾼이에요 |
-
-커맨드를 실행하면 → 스킬이 맥락을 잡고 → 에이전트가 일하는 구조예요.
+---
 
 ## 자주 묻는 질문
 
-### Claude Code가 뭔가요?
-
-Anthropic이 만든 공식 AI 코딩 도구예요. 터미널에서 실행하면 AI랑 대화하면서 코딩할 수 있어요.
-
-```bash
-# 설치
-npm install -g @anthropic-ai/claude-code
-
-# 내 프로젝트에서 실행
-cd my-project
-claude
-```
-
-VS Code 같은 에디터 없이, 터미널에서 바로 "이 버그 고쳐줘", "테스트 만들어줘" 같은 걸 할 수 있어요.
-
 ### 돈이 드나요?
 
-fireauto 자체는 무료예요. MIT 라이선스라 마음대로 쓰시면 돼요.
+fireauto 자체는 **무료**예요. MIT 라이선스라 마음대로 쓰시면 돼요.
 
 다만 Claude Code를 쓰려면 아래 중 하나가 필요해요:
 - **Claude Max 구독** ($100/월 또는 $200/월) — 가장 추천
 - **Claude Pro 구독** ($20/월) — 사용량 제한 있음
 - **Anthropic API 크레딧** — 쓴 만큼 과금
 
-### 어떤 프로젝트에서 쓸 수 있어요?
-
-| 커맨드 | 이런 프로젝트에 딱이에요 |
-|--------|----------------------|
-| `/fireauto-prd` | 아이디어를 구체적인 기획서로 만들 때 |
-| `/fireauto-research` | 뭐든 새로 만들기 전에 시장 조사할 때 |
-| `/fireauto-team` | 규모 큰 작업을 빨리 끝내고 싶을 때 |
-| `/fireauto-seo` | 웹사이트 검색 노출을 개선하고 싶을 때 |
-| `/fireauto-secure` | 서비스 런칭 전 보안 점검할 때 |
-| `/fireauto-ui` | Tailwind CSS + DaisyUI 쓰는 프로젝트 |
-
 ### 에러가 나면 어떻게 하나요?
 
-1. Claude Code가 최신 버전인지 확인해보세요
-   ```bash
-   npm update -g @anthropic-ai/claude-code
-   ```
-
-2. 플러그인을 다시 설치해보세요
-   ```
-   /plugin uninstall fireauto
-   /plugin install fireauto@fireauto
-   ```
-
+1. Claude Code 최신 버전 확인: `npm update -g @anthropic-ai/claude-code`
+2. 플러그인 재설치: `/plugin uninstall fireauto` → `/plugin install fireauto@fireauto`
 3. 그래도 안 되면 [이슈를 남겨주세요](https://github.com/imgompanda/fireauto/issues)
 
 ---

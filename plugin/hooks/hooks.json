@@ -1,0 +1,15 @@
+{
+  "description": "fireauto loop - AI가 반복하며 작업을 완성하는 루프 시스템",
+  "hooks": {
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "${CLAUDE_PLUGIN_ROOT}/hooks/stop-hook.sh"
+          }
+        ]
+      }
+    ]
+  }
+}

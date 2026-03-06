@@ -1,10 +1,9 @@
 ---
 name: fireauto-secure
 description: >
-  This skill should be used when the user asks to "보안 점검", "security check",
-  "security audit", "취약점 분석", "vulnerability scan", "보안 감사",
-  "시크릿 노출", "API 보안", "인증 점검", "rate limit", or mentions
-  security-related code review or penetration testing preparation.
+  "보안 점검", "security check", "security audit", "취약점 분석",
+  "vulnerability scan", "보안 감사", "시크릿 노출", "API 보안", "인증 점검",
+  "rate limit" 등 보안 관련 코드 리뷰나 취약점 감사 시 사용하세요.
 ---
 
 # 보안 감사 방법론

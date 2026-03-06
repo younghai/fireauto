@@ -1,5 +1,5 @@
 ---
-description: "컴퍼니 모델 팀 에이전트 구성 및 실행"
+description: "여러 AI가 동시에 일하고, 서로 대화하며 협업해요."
 allowed-tools:
   - Agent
   - TeamCreate
