@@ -108,9 +108,12 @@ cp .env.example .env.local
 > - `NEXT_PUBLIC_SUPABASE_ANON_KEY` — Supabase 공개 키
 > - `SUPABASE_SERVICE_ROLE_KEY` — Supabase 서비스 키
 >
-> **결제 연동**
-> - `LEMONSQUEEZY_API_KEY` — LemonSqueezy API 키
-> - `LEMONSQUEEZY_WEBHOOK_SECRET` — 웹훅 시크릿
+> **결제 연동 (3가지 중 택 1)**
+> - `NEXT_PUBLIC_PAYMENT_PROVIDER` — 결제 프로바이더 선택 (lemon / paddle / toss, 기본: lemon)
+>
+> - LemonSqueezy: `LEMONSQUEEZY_API_KEY`, `LEMONSQUEEZY_WEBHOOK_SECRET`
+> - Paddle: `PADDLE_API_KEY`, `PADDLE_WEBHOOK_SECRET`, `PADDLE_ENVIRONMENT` (sandbox/production)
+> - Toss: `TOSS_SECRET_KEY`, `TOSS_CLIENT_KEY`, `TOSS_WEBHOOK_SECRET`
 >
 > **이메일**
 > - `RESEND_API_KEY` — Resend API 키
@@ -163,6 +166,40 @@ cp .env.example .env.local
 1. `docs/` 폴더의 파일 목록을 스캔
 2. `setup_progress.md` 생성 (llm.md의 Progress Template 사용)
 3. Step 0부터 순차적으로 진행
+
+---
+
+## Step 6.5: MCP 서버 설정 (선택)
+
+AI 코딩 도구(Claude Code, Cursor 등)로 개발할 때 공식 문서 참조를 자동화할 수 있어요.
+
+사용자에게 안내하세요:
+
+> AI 코딩 도구를 사용하시나요? `.mcp.json` 파일을 프로젝트 루트에 생성하면
+> Supabase DB, Paddle 문서, Toss 문서를 AI가 직접 참조할 수 있어요.
+>
+> `.mcp.json`은 `.gitignore`에 포함되어 있어서 API 키가 노출되지 않아요.
+
+```json
+{
+  "mcpServers": {
+    "supabase": {
+      "type": "http",
+      "url": "https://mcp.supabase.com/mcp?project_ref=YOUR_PROJECT_REF"
+    },
+    "paddle": {
+      "command": "npx",
+      "args": ["-y", "@paddle/paddle-mcp", "--api-key=YOUR_PADDLE_API_KEY", "--environment=sandbox"]
+    },
+    "tosspayments": {
+      "command": "npx",
+      "args": ["-y", "@tosspayments/integration-guide-mcp"]
+    }
+  }
+}
+```
+
+> 사용하지 않는 프로바이더는 제거해도 돼요.
 
 ---
 
