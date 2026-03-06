@@ -57,6 +57,8 @@ fireauto는 단독으로도 쓸 수 있지만, **[FireShip Starter Kit](https://
 
 보일러플레이트에 인증, 결제, AI, 이메일이 다 들어있고, fireauto로 SEO 점검하고 보안 체크하고 UI 만들면 바로 런칭할 수 있어요.
 
+[데모 보기 →](https://fire-ship-zip3.vercel.app)
+
 ```bash
 # 보일러플레이트 다운로드
 git clone https://github.com/imgompanda/FireShipZip3.git
