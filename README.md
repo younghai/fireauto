@@ -99,6 +99,12 @@ cd my-app && npm install && cp .env.example .env.local
 6. /security-guard  → 보안 구멍이 없는지 확인해요
 ```
 
+### 영상 콘텐츠가 필요하다면
+
+```
+  /video-maker  → React 코드로 영상을 만들어요 (인트로, 자막, 차트 등)
+```
+
 ### 규모가 큰 작업이라면
 
 ```
@@ -125,6 +131,7 @@ cd my-app && npm install && cp .env.example .env.local
 | `/security-guard` | 보안 담당 | 코드 보안 취약점 8개 카테고리 점검 |
 | `/designer` | 디자이너 | DaisyUI UI 구축 / 마이그레이션 / 테마 |
 | `/uiux-upgrade` | UX 개선자 | 내 서비스 UI/UX 감사 + 자동 수정 |
+| `/video-maker` | 영상 제작자 | React 코드로 영상 제작 (Remotion) |
 | `/loop` | 반복 실행기 | AI가 반복하며 작업 완성 (ralph-loop 기반) |
 | `/cancel-loop` | | 실행 중인 루프 중단 |
 | `/fireship-install` | | FireShip 보일러플레이트 자동 설치 |
@@ -221,6 +228,19 @@ DaisyUI v5 기반으로 UI를 만들거나 바꿔줘요.
 감사 항목: 다크/라이트 모드 호환, 반응형 디자인, 접근성, 로딩 상태, 폼 UX, 네비게이션 일관성, 타이포그래피, 애니메이션
 
 P0(긴급) ~ P3(개선 권장)으로 분류하고, 범위를 선택하면 자동으로 수정해줘요.
+
+### `/video-maker` — 영상 제작자
+
+React 기반 Remotion으로 코드로 영상을 만들어요. AI가 직접 영상 코드를 작성해요.
+
+```
+/video-maker
+```
+
+4가지 모드: init (프로젝트 셋업) / create (영상 제작) / edit (수정) / render (렌더링)
+
+인트로, 텍스트 애니메이션, 차트, 자막, 3D, 장면 전환 등 다 가능해요.
+Remotion MCP를 설치하면 30개+ 전문 규칙을 실시간 참조해요.
 
 ### `/loop` — 반복 실행기
 
