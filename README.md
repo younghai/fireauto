@@ -78,6 +78,12 @@ cd my-app && npm install && cp .env.example .env.local
 
 ## 어떤 상황에서 뭘 쓰면 되나요?
 
+### Claude Code 처음 쓴다면 (먼저 이거!)
+
+```
+0. /freainer  → 추천 MCP + LSP + 알림 훅을 한번에 설치해요
+```
+
 ### 서비스를 처음 만드는 중이라면
 
 ```
@@ -142,6 +148,7 @@ cd my-app && npm install && cp .env.example .env.local
 | `/cancel-loop` | | 실행 중인 루프 중단 |
 | `/fireship-install` | | FireShip 보일러플레이트 자동 설치 (멀티 결제 지원) |
 | `/lsp-install` | LSP 셋업 | Claude Code에 LSP 연결 → 코드 탐색 극대화 |
+| `/freainer` | 원클릭 세팅 | 추천 MCP + LSP + 알림 훅 한번에 설치 |
 
 ---
 
@@ -164,6 +171,24 @@ fireauto에는 **커맨드**와 **스킬(가이드)** 두 종류가 있어요.
 ---
 
 ## 각 기능 상세
+
+### `/freainer` — 원클릭 세팅
+
+Claude Code 처음 쓰는 사람도 커맨드 하나로 프로급 환경을 만들 수 있어요.
+
+```
+/freainer
+```
+
+자동으로 설치되는 것들:
+- **Context7** — 라이브러리 최신 문서를 AI가 실시간 참조
+- **Playwright** — 브라우저 자동화 + E2E 테스트
+- **Draw.io** — 아키텍처도, 플로우차트, ERD 자동 생성
+- **LSP** — 코드 탐색 속도와 정확도 극대화
+- **알림 훅** — 작업 완료 시 macOS 알림
+- **에이전트 팀** — 여러 AI가 동시 작업
+
+전부 무료예요. API 키도 필요 없어요.
 
 ### `/planner` — 기획자
 
